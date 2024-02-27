@@ -1,10 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
-//import { AuthService } from '../../services/firebase.service';
+import { AuthService } from '../services/firebase.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
-//import { User } from 'src/app/model/user.model';
+import { User } from 'src/app/model/user.model';
 import { Router } from '@angular/router'; // Importa Router
-//constructor(private authService: AuthService, private fb: FormBuilder, @Inject(AlertController) private alertController: AlertController,private router: Router) {}
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
@@ -14,7 +14,7 @@ export class RegistroPage implements OnInit {
 
   formularioRegistro!: FormGroup;
 
-  constructor( private fb: FormBuilder, @Inject(AlertController) private alertController: AlertController,private router: Router) {}
+  constructor(private authService: AuthService, private fb: FormBuilder, @Inject(AlertController) private alertController: AlertController,private router: Router) {}
 
   ngOnInit() {
     this.formularioRegistro = this.fb.group({
@@ -39,9 +39,9 @@ export class RegistroPage implements OnInit {
   async register() {
     if (this.formularioRegistro.valid) {
       try {
-        // await this.authService.register(
-        //   this.formularioRegistro.value as User
-        // );
+        await this.authService.register(
+          this.formularioRegistro.value as User
+        );
         this.router.navigate(['/login']);
 
         // Redirect to login page or handle successful registration

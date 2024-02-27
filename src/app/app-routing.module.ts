@@ -4,6 +4,7 @@ import { LoginPage } from './login/login.page';
 import { HomePage } from './home/home.page';
 import { HttpClientModule } from '@angular/common/http';
 import { SquadsPage } from './squads/squads.page';
+import { RegistroPage } from './registro/registro.page';
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   { path: 'login', component: LoginPage },
+  { path: 'registro', component: RegistroPage },
   { path: 'home', component: HomePage },
   { path: 'squads/:id', component: SquadsPage },
 ];
