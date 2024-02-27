@@ -5,6 +5,7 @@ import { HomePage } from './home/home.page';
 import { HttpClientModule } from '@angular/common/http';
 import { SquadsPage } from './squads/squads.page';
 import { RegistroPage } from './registro/registro.page';
+import { FavoritosPage } from './favoritos/favoritos.page';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'registro', component: RegistroPage },
   { path: 'home', component: HomePage },
   { path: 'squads/:id', component: SquadsPage },
+  { path: 'favoritos', component: FavoritosPage },
 ];
 
 @NgModule({

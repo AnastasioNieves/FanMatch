@@ -1,11 +1,4 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Registro</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content>
   <ion-card>
@@ -27,7 +20,7 @@
           <ion-input formControlName="confirmacionPassword" type="password"></ion-input>
         </ion-item>
         <br>
-        <ion-button (click)="register()">Registrarse</ion-button>
+        <ion-button color="medium" (click)="register()">Registrarse</ion-button>
       </form>
     </ion-card-content>
 
@@ -37,9 +30,9 @@
 
 </ion-content>
 <ion-footer>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="end">
-      <ion-button [routerLink]="['/login']">Login</ion-button>
+  <ion-toolbar color="Gray">
+    <ion-buttons slot="end" >
+      <ion-button  shape="round"  [routerLink]="['/login']">Login</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>

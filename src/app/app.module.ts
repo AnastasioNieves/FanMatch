@@ -2,7 +2,8 @@ import { HomePage } from './home/home.page';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
@@ -15,6 +16,11 @@ import { SquadsPage } from './squads/squads.page';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { FavoritosPage } from './favoritos/favoritos.page';
+import { HeaderComponent } from './Components/commons/header/header.component';
+import { FooterComponent } from './Components/commons/footer/footer.component';
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -31,9 +37,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 @NgModule({
-  declarations: [AppComponent,LoginPage,RegistroPage,HomePage,SquadsPage],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,ReactiveFormsModule,FormsModule,],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  declarations: [AppComponent,LoginPage,RegistroPage,HomePage,SquadsPage,FavoritosPage,HeaderComponent,FooterComponent],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,ReactiveFormsModule,FormsModule,AngularFirestoreModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AngularFirestore],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
