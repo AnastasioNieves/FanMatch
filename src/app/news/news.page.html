@@ -1,0 +1,21 @@
+
+
+<ion-content>
+
+
+  <ion-list>
+    <ion-item *ngFor="let item of news">
+      <ion-thumbnail slot="start">
+        <img [src]="item.newsFirstImage">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ item.newsHeadline }}</h2>
+        <p>{{ item.newsTeaser }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+
+</ion-content>
+

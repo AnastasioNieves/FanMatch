@@ -1,28 +1,25 @@
-import { HomePage } from './home/home.page';
+// Import necessary modules and components
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginPage } from './login/login.page';
 import { RegistroPage } from './registro/registro.page';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomePage } from './home/home.page';
 import { SquadsPage } from './squads/squads.page';
 
+import { FooterComponent } from './Components/commons/footer/footer.component';
+import { NewsPage } from './news/news.page';
+
+// Import AngularFire related modules
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { FavoritosPage } from './favoritos/favoritos.page';
-import { HeaderComponent } from './Components/commons/header/header.component';
-import { FooterComponent } from './Components/commons/footer/footer.component';
-
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -36,10 +33,29 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
 @NgModule({
-  declarations: [AppComponent,LoginPage,RegistroPage,HomePage,SquadsPage,FavoritosPage,HeaderComponent,FooterComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,ReactiveFormsModule,FormsModule,AngularFirestoreModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AngularFirestore],
-  bootstrap: [AppComponent],
+  declarations: [
+    AppComponent,
+    LoginPage,
+    RegistroPage,
+    HomePage,
+    SquadsPage,
+
+    FooterComponent,
+    NewsPage
+  ],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AngularFirestoreModule
+  ],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

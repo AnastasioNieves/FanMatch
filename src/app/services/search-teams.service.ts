@@ -10,10 +10,10 @@ export class SearchTeamService {
   constructor(private http: HttpClient) {}
 
   getTeams(): Observable<any> {
-    const url = 'https://transfermarket.p.rapidapi.com/clubs/list-by-competition?id=ES1&domain=de';
+    const url = 'https://transfermarket.p.rapidapi.com/clubs/list-by-competition?id=ES1&domain=es';
     // Set headers as needed
     const headers = {
-      'X-RapidAPI-Key': 'df79653e95mshad1c2a3a2017c31p15a4d2jsne26936cf48b4',
+      'X-RapidAPI-Key': '071ccc8eacmshc7b84237b63a76bp1c456fjsned4ee880d56c',
       'X-RapidAPI-Host': 'transfermarket.p.rapidapi.com'
     };
 

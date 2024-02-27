@@ -28,7 +28,7 @@ export class LoginPage implements OnInit {
   async login() {
     try {
       await this.authService.login(this.formularioLogin.value as User);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/news']);
     } catch (error) {
       console.error('Error during login:', error);
 
