@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="gray">
+    <ion-title>Plantilla</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor="let player of squad">
+    <img [src]="player.image" alt="Player Image">
+    <ion-card-content>
+      <ion-card-title>{{ player.name }}</ion-card-title>
+      <p>{{ player.position }}</p>
+      <p>Edad: {{ player.age }}</p>
+      <p>Valor de mercado: {{ player.marketValue.value }} {{ player.marketValue.currency }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+
+</ion-footer>

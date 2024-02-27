@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginPage } from './login/login.page';
 import { HomePage } from './home/home.page';
 import { HttpClientModule } from '@angular/common/http';
+import { SquadsPage } from './squads/squads.page';
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginPage },
   { path: 'home', component: HomePage },
+  { path: 'squads/:id', component: SquadsPage },
 ];
 
 @NgModule({

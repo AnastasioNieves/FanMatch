@@ -10,9 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginPage } from './login/login.page';
 import { RegistroPage } from './registro/registro.page';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SquadsPage } from './squads/squads.page';
 
 @NgModule({
-  declarations: [AppComponent,LoginPage,RegistroPage,HomePage,],
+  declarations: [AppComponent,LoginPage,RegistroPage,HomePage,SquadsPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,ReactiveFormsModule,FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
