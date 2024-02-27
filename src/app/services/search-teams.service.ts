@@ -1,0 +1,22 @@
+// search-team.service.ts
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs'; // Import Observable
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SearchTeamService {
+  constructor(private http: HttpClient) {}
+
+  getTeams(): Observable<any> {
+    const url = 'https://transfermarket.p.rapidapi.com/clubs/list-by-competition?id=ES1&domain=de';
+    // Set headers as needed
+    const headers = {
+      'X-RapidAPI-Key': 'df79653e95mshad1c2a3a2017c31p15a4d2jsne26936cf48b4',
+      'X-RapidAPI-Host': 'transfermarket.p.rapidapi.com'
+    };
+
+    return this.http.get(url, { headers });
+  }
+}
