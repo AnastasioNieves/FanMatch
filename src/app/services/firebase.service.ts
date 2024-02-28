@@ -2,7 +2,7 @@
 
 
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, getAuth, signOut } from 'firebase/auth';
-
+import { ref, getStorage, uploadString, getDownloadURL } from 'firebase/storage';
 
 import { User } from './../model/user.model';
 import { Injectable } from '@angular/core';
@@ -30,6 +30,12 @@ export class AuthService {
     return signOut(getAuth());
   }
 
+  // Subir foto
+  async uploadImage(path: string, data_url: string) {
+    return uploadString(ref(getStorage(), path), data_url, 'data_url').then(() => {
+      return getDownloadURL(ref(getStorage(), path))
+    });
+  }
 
 
 }

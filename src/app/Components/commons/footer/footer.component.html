@@ -1,20 +1,20 @@
 <ion-tabs>
-  <ion-tab-bar slot="bottom">
+  <ion-tab-bar slot="bottom"  id="open-loading" >
     <ion-tab-button tab="news" >
       <ion-icon name="home-outline"></ion-icon>
+      <ion-loading class="custom-loading" trigger="open-loading" message="Loading..." [duration]="3000"></ion-loading>
       Noticias
     </ion-tab-button>
-    <ion-tab-button tab="radio">
-      <ion-icon name="radio"></ion-icon>
-      Radio
-    </ion-tab-button>
-    <ion-tab-button tab="library">
+
+    <ion-tab-button tab="libreria">
       <ion-icon name="library"></ion-icon>
       Library
     </ion-tab-button>
-    <ion-tab-button tab="home">
+    <ion-tab-button tab="home"  >
       <ion-icon name="search"></ion-icon>
-      Search
+      <ion-loading class="custom-loading" trigger="open-loading" message="Loading..." [duration]="3000"></ion-loading>
+      Equipos
+
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

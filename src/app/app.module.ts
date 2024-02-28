@@ -20,6 +20,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { LibreriaPage } from './libreria/libreria.page';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -41,7 +42,7 @@ const app = initializeApp(firebaseConfig);
     RegistroPage,
     HomePage,
     SquadsPage,
-
+    LibreriaPage,
     FooterComponent,
     NewsPage
   ],

@@ -1,0 +1,19 @@
+
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="uploadImage()">
+    <ion-item>
+      <ion-label>Imagen:</ion-label>
+      <ion-input formControlName="image" readonly></ion-input>
+      <ion-button slot="end" (click)="takeImage()">Tomar foto</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-button type="submit" expand="full" [disabled]="!form.valid">Subir imagen</ion-button>
+    </ion-item>
+  </form>
+
+  <ion-card *ngIf="form.value.image">
+    <img [src]="form.value.image" />
+  </ion-card>
+</ion-content>

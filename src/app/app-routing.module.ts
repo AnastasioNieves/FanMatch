@@ -7,6 +7,7 @@ import { SquadsPage } from './squads/squads.page';
 import { RegistroPage } from './registro/registro.page';
 
 import { NewsPage } from './news/news.page';
+import { LibreriaPage } from './libreria/libreria.page';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'squads/:id', component: SquadsPage },
 
   { path: 'news', component: NewsPage},
+  { path: 'libreria', component: LibreriaPage},
 
 ];
 
